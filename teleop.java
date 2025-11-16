@@ -137,7 +137,7 @@ public class BaseTeleop extends OpMode{
         
         // Movement input
         
-        // Forward/backward. NOT NECESSARILY TRUE: Negate because joystick goes negative when pushed forward
+        // Forward/backward. Negate because joystick goes negative when pushed forward
         double drivePower = gamepad1.left_stick_y;
         // Left/right
         double strafePower = -gamepad1.left_stick_x;
@@ -167,21 +167,34 @@ public class BaseTeleop extends OpMode{
 
         if (gamepad1.a) {
             intakeServo.setPower(1.0);
+            
+        } else if (gamepad1.b && !gamepad1.a) {
+            intakeServo.setPower(-1.0);
+            
         } else {
             intakeServo.setPower(0.0);
         }
         
+        
         if (gamepad1.left_bumper) {
             leftConveyor.setPower(0.5);
             rightConveyor.setPower(0.5);
+            
+        } else if (gamepad1.left_trigger > 0.2 && !gamepad1.left_bumper) {
+            leftConveyor.setPower(-0.5);
+            rightConveyor.setPower(-0.5);
+            
         } else {
             leftConveyor.setPower(0.0);
             rightConveyor.setPower(0.0);
         }
 
         if (gamepad1.right_bumper) {
-            leftLaunch.setPower(0.55);
-            rightLaunch.setPower(0.55);
+            leftLaunch.setPower(0.52);
+            rightLaunch.setPower(0.52);
+        } else if (gamepad1.right_trigger > 0.2 && !gamepad1.right_bumper) {
+            leftLaunch.setPower(gamepad1.right_trigger*0.1+0.45);
+            rightLaunch.setPower(gamepad1.right_trigger*0.1+0.45);
         } else {
             leftLaunch.setPower(0.0);
             rightLaunch.setPower(0.0);
