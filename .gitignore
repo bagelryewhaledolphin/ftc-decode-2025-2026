@@ -1,0 +1,29 @@
+# Jekyll generated site
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundler
+Gemfile.lock
+vendor/
+.bundle/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
