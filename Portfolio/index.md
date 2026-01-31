@@ -361,7 +361,7 @@ body {
   <!-- Photo - Full Width -->
   <div class="photo-section">
     <img src="assets/images/team-members.jpeg" alt="Team FirstEnergy" class="team-photo">
-    <p class="photo-caption">(Left to Right): Garland, John, Rohan, Rishon — Williamstown Middle School Competition</p>
+    <p class="photo-caption">(Left to Right): John, Garland, Rishon, Rohan</p>
   </div>
 
   <!-- Summary + Org Chart Side by Side -->
